@@ -1,6 +1,6 @@
 import React from 'react';
 import { TechCategory } from '../../types/tech';
-const BASE_URL = '/my-cv/'; 
+const BASE_URL = '/cv-single-page/'; 
 
 const skills: TechCategory[] = [
   {
