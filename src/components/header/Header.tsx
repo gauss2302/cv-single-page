@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -6,11 +6,11 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   const title = "Nikita Shilov";
-  const navItems = [
+  const navItems = useMemo(() => [
     { label: "Home", href: "#home" },
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" }
-  ];
+  ], []); // Empty dependency array since these items never change
 
   useEffect(() => {
     const handleScroll = () => {

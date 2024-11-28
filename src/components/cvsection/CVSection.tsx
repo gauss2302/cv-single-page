@@ -74,6 +74,7 @@ const CVSection: React.FC = () => {
     }
   ];
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const sectionRefs = {
     experience: useRef<HTMLDivElement>(null),
     education: useRef<HTMLDivElement>(null)

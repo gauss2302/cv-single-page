@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 
 interface ContactMethod {
   icon: string;
@@ -7,24 +7,7 @@ interface ContactMethod {
   link: string;
 }
 
-interface FormState {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
 const Contact: React.FC = () => {
-  const [formState, setFormState] = useState<FormState>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [focusedField, setFocusedField] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
   const contactMethods: ContactMethod[] = [
     {
       icon: '/icons/contacts/github.svg',
@@ -63,28 +46,6 @@ const Contact: React.FC = () => {
       link: 'https://leetcode.com/u/shilov6865/'
     }
   ];
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      setIsSubmitting(true);
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitted(true);
-    } catch (error) {
-      console.error('Form submission failed:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormState(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800">
