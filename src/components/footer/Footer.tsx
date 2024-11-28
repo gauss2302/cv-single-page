@@ -6,7 +6,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: 'github', label: 'GitHub', href: 'https://github.com/gauss2302' },
     { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/nick-shilov/' },
-    { icon: 'mail', label: 'Email', href: 'mailto:your@email.com' }
+    { icon: 'mail', label: 'Email', href: 'mailto:shilov6865@gmail.com' }
   ];
 
   const getSocialIcon = (icon: string) => {
