@@ -7,40 +7,42 @@ interface ContactMethod {
   link: string;
 }
 
+const BASE_URL = '/cv-single-page/'; 
+
 const Contact: React.FC = () => {
   const contactMethods: ContactMethod[] = [
     {
-      icon: '/icons/contacts/github.svg',
+      icon: `${BASE_URL}/icons/contacts/github.svg`,
       title: 'GitHub',
       value: '@gauss2302',
       link: 'https://github.com/gauss2302'
     },
     {
-      icon: '/icons/contacts/tg.svg',
+      icon: `${BASE_URL}/icons/contacts/tg.svg`,
       title: 'Telegram',
       value: '@nick230296',
       link: 'https://t.me/nick230296'
     },
     {
-      icon: '/icons/contacts/gmail.svg',
+      icon: `${BASE_URL}/icons/contacts/gmail.svg`,
       title: 'Email',
       value: 'shilov6865@gmail.com',
       link: 'mailto:shilov6865@gmail.com'
     },
     {
       value: '+86 132 6820 8154',
-      icon: '/icons/contacts/whatapp.svg',
+      icon: `${BASE_URL}/icons/contacts/whatapp.svg`,
       title: 'WhatsApp',
       link: 'https://wa.me/8613268208154'
     },
     {
-      icon: '/icons/contacts/phone.svg',
+      icon: `${BASE_URL}/icons/contacts/phone.svg`,
       title: 'Phone',
       value: '+998 500073405',
       link: 'tel:+998 500073405'
     },
     {
-      icon: '/icons/contacts/leet.svg',
+      icon: `${BASE_URL}/icons/contacts/leet.svg`,
       title: 'LeetCode',
       value: '@shilov6865',
       link: 'https://leetcode.com/u/shilov6865/'

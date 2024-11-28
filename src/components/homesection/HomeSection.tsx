@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './HomeSection.module.css';
 import TechStack from '../techsection/TechStack';
+const BASE_URL = '/cv-single-page/'; 
 
 interface Skill {
   name: string;
@@ -12,22 +13,22 @@ const HomeSection: React.FC = () => {
   const skills: Skill[] = [
     {
       name: 'Frontend Development',
-      icon: '/icons/main/web.svg',
+      icon: `${BASE_URL}/icons/main/web.svg`,
       description: 'Modern web development'
     },
     {
       name: 'Backend Architecture',
-      icon: '/icons/main/back.png',
+      icon: `${BASE_URL}/icons/main/back.png`,
       description: 'Scalable solutions'
     },
     {
       name: 'Mobile Development',
-      icon: '/icons/main/mobile.svg',
+      icon: `${BASE_URL}/icons/main/mobile.svg`,
       description: 'Cross-platform apps'
     },
     {
       name: 'Architecture Design',
-      icon: '/icons/main/data.svg',
+      icon: `${BASE_URL}/icons/main/data.svg`,
       description: 'System design'
     }
   ];
