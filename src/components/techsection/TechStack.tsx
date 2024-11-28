@@ -1,48 +1,48 @@
 import React from 'react';
 import { TechCategory } from '../../types/tech';
+const BASE_URL = '/my-cv/'; 
 
 const skills: TechCategory[] = [
   {
     name: 'Languages',
     items: [
-      { name: 'TypeScript', color: '#3178C6', icon: '/icons/tech/languages/typescript.svg' },
-      { name: 'Python', color: '#3776AB', icon: '/icons/tech/languages/python.svg' },
-      { name: 'Golang', color: '#339933', icon: '/icons/tech/languages/go.svg' },
-      { name: 'Dart', color: '#339933', icon: '/icons/tech/languages/dart.svg' }
+      { name: 'TypeScript', color: '#3178C6', icon: `${BASE_URL}icons/tech/languages/typescript.svg` },
+      { name: 'Python', color: '#3776AB', icon: `${BASE_URL}icons/tech/languages/python.svg` },
+      { name: 'Golang', color: '#339933', icon: `${BASE_URL}icons/tech/languages/go.svg` },
+      { name: 'Dart', color: '#339933', icon: `${BASE_URL}icons/tech/languages/dart.svg` }
     ]
   },
   {
     name: 'Frameworks',
     items: [
-      { name: 'Flutter', color: '#61DAFB', icon: '/icons/tech/frameworks/flutter.svg' },
-      { name: 'React', color: '#61DAFB', icon: '/icons/tech/frameworks/react.svg' },
-      { name: 'Vue', color: '#4FC08D', icon: '/icons/tech/frameworks/vue.svg' },
-      { name: 'NextJS', color: '#FF3E00', icon: '/icons/tech/frameworks/nextjs.svg' }
+      { name: 'Flutter', color: '#61DAFB', icon: `${BASE_URL}icons/tech/frameworks/flutter.svg` },
+      { name: 'React', color: '#61DAFB', icon: `${BASE_URL}icons/tech/frameworks/react.svg` },
+      { name: 'Vue', color: '#4FC08D', icon: `${BASE_URL}icons/tech/frameworks/vue.svg` },
+      { name: 'NextJS', color: '#FF3E00', icon: `${BASE_URL}icons/tech/frameworks/nextjs.svg` }
     ]
   },
   {
     name: 'Databases',
     items: [
-      { name: 'PostgreSQL', color: '#4169E1', icon: '/icons/tech/db/postgresql.svg' },
-      { name: 'MySQL', color: '#4169E1', icon: '/icons/tech/db/mysql.svg' },
-      { name: 'Redis', color: '#DC382D', icon: '/icons/tech/db/redis.svg' },
-      { name: 'MongoDB', color: '#4169E1', icon: '/icons/tech/db/mongodb.svg' },
-      // { name: 'Firebase', color: '#4169E1', icon: '/icons/tech/db/firebase.svg' }
+      { name: 'PostgreSQL', color: '#4169E1', icon: `${BASE_URL}icons/tech/db/postgresql.svg` },
+      { name: 'MySQL', color: '#4169E1', icon: `${BASE_URL}icons/tech/db/mysql.svg` },
+      { name: 'Redis', color: '#DC382D', icon: `${BASE_URL}icons/tech/db/redis.svg` },
+      { name: 'MongoDB', color: '#4169E1', icon: `${BASE_URL}icons/tech/db/mongodb.svg` }
     ]
   },
   {
     name: 'DevOps & Tools',
     items: [
-      { name: 'Docker', color: '#2496ED', icon: '/icons/tech/tools/docker.svg' },
-      { name: 'K8', color: '#2496ED', icon: '/icons/tech/tools/k8.svg' },
-      { name: 'AWS', color: '#FF9900', icon: '/icons/tech/tools/aws.svg' },
-      { name: 'Git', color: '#F05032', icon: '/icons/tech/tools/git.svg' },
-      { name: 'Bash', color: '#FCC624', icon: '/icons/tech/tools/bash.svg' },
-      { name: 'Linux', color: '#FCC624', icon: '/icons/tech/tools/linux.svg' },
-      { name: 'Grafana', color: '#FCC624', icon: '/icons/tech/tools/grafana.svg' },
-      { name: 'Prometheus', color: '#FCC624', icon: '/icons/tech/tools/prometheus.svg' },
-      { name: 'Kafka', color: '#FCC624', icon: '/icons/tech/tools/kafka.svg' },
-      { name: 'RabbitMQ', color: '#FCC624', icon: '/icons/tech/tools/rabbitmq.svg' }
+      { name: 'Docker', color: '#2496ED', icon: `${BASE_URL}icons/tech/tools/docker.svg` },
+      { name: 'K8', color: '#2496ED', icon: `${BASE_URL}icons/tech/tools/k8.svg` },
+      { name: 'AWS', color: '#FF9900', icon: `${BASE_URL}icons/tech/tools/aws.svg` },
+      { name: 'Git', color: '#F05032', icon: `${BASE_URL}icons/tech/tools/git.svg` },
+      { name: 'Bash', color: '#FCC624', icon: `${BASE_URL}icons/tech/tools/bash.svg` },
+      { name: 'Linux', color: '#FCC624', icon: `${BASE_URL}icons/tech/tools/linux.svg` },
+      { name: 'Grafana', color: '#FCC624', icon: `${BASE_URL}icons/tech/tools/grafana.svg` },
+      { name: 'Prometheus', color: '#FCC624', icon: `${BASE_URL}icons/tech/tools/prometheus.svg` },
+      { name: 'Kafka', color: '#FCC624', icon: `${BASE_URL}icons/tech/tools/kafka.svg` },
+      { name: 'RabbitMQ', color: '#FCC624', icon: `${BASE_URL}icons/tech/tools/rabbitmq.svg` }
     ]
   }
 ];
