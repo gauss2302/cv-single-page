@@ -101,7 +101,7 @@ const CVSection: React.FC = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sectionRefs]);
 
   return (
    <section className="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800">
