@@ -2,6 +2,7 @@
   "name": "single-page-cv",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gauss2302.github.io/cv-single-page/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -43,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/node": "^22.10.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
