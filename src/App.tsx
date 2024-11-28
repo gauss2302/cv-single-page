@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header/Header';
+import HomeSection from './components/homesection/HomeSection';
+import CVSection from './components/cvsection/CVSection';
+import Footer from './components/footer/Footer';
+import Contact from './components/contacts/Contact';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-grow">
+        {/* Home Section */}
+        <section id="home">
+          <HomeSection />
+        </section>
+
+        {/* Experience Section */}
+        <section id="experience">
+          <CVSection />
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact">
+          <Contact />
+        </section>
+        <Footer />
+      </main>
     </div>
   );
-}
+};
 
 export default App;
