@@ -7,26 +7,33 @@ import Contact from './components/contacts/Contact';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       
-      <main className="flex-grow">
+      <main className="flex-grow w-full">
         {/* Home Section */}
-        <section id="home">
-          <HomeSection />
+        <section id="home" className="w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <HomeSection />
+          </div>
         </section>
 
         {/* Experience Section */}
-        <section id="experience">
-          <CVSection />
+        <section id="experience" className="w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <CVSection />
+          </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact">
-          <Contact />
+        <section id="contact" className="w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Contact />
+          </div>
         </section>
-        <Footer />
       </main>
+      
+      <Footer />
     </div>
   );
 };

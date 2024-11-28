@@ -40,7 +40,7 @@ const Header = () => {
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -54,83 +54,94 @@ const Header = () => {
 
   return (
     <>
-      <header 
-        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 shadow-lg"
+<header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 shadow-lg">
+  <div className="container mx-auto px-4 lg:px-6">
+    <div className="flex justify-between items-center h-20">
+      {/* Brand - unchanged */}
+      <a
+        href="#home"
+        onClick={(e) => scrollToSection(e, '#home')}
+        className="text-lg font-light tracking-widest uppercase text-white hover:text-gray-200 transition-colors duration-200"
       >
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="flex justify-between items-center h-20">
-            {/* Brand */}
-            <a
-              href="#home"
-              onClick={(e) => scrollToSection(e, '#home')}
-              className="text-lg font-light tracking-widest uppercase text-white hover:text-gray-200 transition-colors duration-200"
-            >
-              {title}
-            </a>
+        {title}
+      </a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-12">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => scrollToSection(e, item.href)}
-                  className={`${styles.navItem} text-sm tracking-wider uppercase transition-colors duration-200 relative
-                    ${activeSection === item.href.substring(1) 
-                      ? 'text-white' 
-                      : 'text-gray-200 hover:text-white'}`}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
+      {/* Desktop Navigation */}
+      <nav className="hidden md:flex space-x-12">
+        {navItems.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            onClick={(e) => scrollToSection(e, item.href)}
+            className={`${styles.navItem} text-sm tracking-wider uppercase transition-colors duration-200 relative
+              ${activeSection === item.href.substring(1) 
+                ? 'text-white' 
+                : 'text-gray-200 hover:text-white'}`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
 
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden p-2 rounded-md text-white hover:text-gray-200 transition-colors duration-200"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+      {/* Mobile menu button */}
+      <button
+        className="block md:hidden p-2 rounded-md text-white hover:text-gray-200 transition-colors duration-200"
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        aria-label="Toggle menu"
+      >
+        <svg
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="container mx-auto px-4 py-2">
-              <div className="bg-indigo-900/90 backdrop-blur-sm rounded-lg">
-                {navItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={(e) => scrollToSection(e, item.href)}
-                    className={`block py-3 px-4 text-sm font-light tracking-wider uppercase transition-colors
-                      ${activeSection === item.href.substring(1) 
-                        ? 'text-white' 
-                        : 'text-gray-300 hover:text-white'}`}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </header>
+  {/* Mobile Menu */}
+  <div 
+    className={`
+      fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 
+      ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+      md:hidden
+    `}
+    onClick={() => setIsMobileMenuOpen(false)}
+  >
+    <div 
+      className={`
+        fixed inset-y-0 right-0 w-64 bg-indigo-900 transform transition-transform duration-300 ease-in-out
+        ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
+      `}
+      onClick={e => e.stopPropagation()}
+    >
+      <div className="p-6 space-y-4">
+        {navItems.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            onClick={(e) => scrollToSection(e, item.href)}
+            className={`
+              block py-2 text-base font-medium tracking-wider uppercase transition-colors
+              ${activeSection === item.href.substring(1) 
+                ? 'text-white' 
+                : 'text-gray-300 hover:text-white'}
+            `}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</header>
       {/* Spacer */}
       <div className="h-20" />
     </>
