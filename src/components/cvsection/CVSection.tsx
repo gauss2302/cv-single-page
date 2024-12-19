@@ -50,7 +50,7 @@ const CVSection: React.FC = () => {
       location: "Shanghai, China",
       achievements: [
         "Delivered Flutter mobile applications, developing new features and optimizing performance:\n BLoC/Provider/Riverpod, Go Router, Frezeed, Streams, RxDart, Channels, Isolates.",
-        "Developed Go modular monolith and microservice server-side, integrated with mobile client:\n Gin, Fiber, Sqlx, Gorm, gRPC, RestAPI, PostgreSQL, Docker, RabbitMQ, Kafka, Nginx, Prometheus, Grafana." +
+        "Developed Go modular monolith and microservice server-side, integrated with mobile client:\n Gin, Fiber, Sqlx, Gorm, gRPC, RestAPI, PostgreSQL, Docker, RabbitMQ, Kafka, Nginx, Prometheus, Grafana.",
         "Prepared and released applications on AppStore, Play Store, and Baidu Store.",
         "Conducted code reviews and optimized legacy code, improving overall code quality by 35%."
       ]
